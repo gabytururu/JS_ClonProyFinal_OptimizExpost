@@ -29,6 +29,8 @@ botonAbrir.addEventListener('click', ()=>{
     }
 })
 
+// FIN DE optimización 07.01.2021 == validación if carrito vació (para evitar mostrar modal vacio) -- Ver tmb opti adicional en boton vaciar carrito // 
+
 botonCerrar.addEventListener('click', ()=>{
     contenedorModal.classList.toggle('modal-active')
 })
@@ -152,7 +154,7 @@ botonVaciar.addEventListener("click" , () => {
     reservasAcumuladas = []
     reservacionesAcumuladas()
 
-    //optimizacion del 07.01.2021
+    //optimizacion del 07.01.2021 (asociado a vaciar carrito)
     botonCerrar.click()
 })
 
@@ -186,7 +188,7 @@ const filtrarPorActividad = () => {
 }
 
     filtrarActividades.addEventListener("change", () => {
-        console.log(filtrarActividades.value)
+       
         filtrarPorActividad ()
 })
 
