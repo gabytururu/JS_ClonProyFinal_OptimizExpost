@@ -87,12 +87,9 @@ confirmarRegistro.addEventListener("click" , () => {
                     confirmButtonAriaLabel: 'Thumbs up, great!', 
                 })
     
-                document.getElementById("formato-registro").reset()
-                
-    
-    
+                document.getElementById("formato-registro").reset()              
+   
           }
-      
     })
     
     

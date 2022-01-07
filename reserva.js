@@ -17,10 +17,18 @@ const botonAbrir = document.getElementById('boton-carrito')
 const botonCerrar = document.getElementById('carritoCerrar')
 const modalCarrito = document.getElementsByClassName('modal-carrito')[0]
 
+// optimización 07.01.2021 == validación if carrito vació (para evitar mostrar modal vacio)
 
 botonAbrir.addEventListener('click', ()=>{
-    contenedorModal.classList.toggle('modal-active')
+    if (reservasAcumuladas.length < 1){
+                 
+        Swal.fire('Tu carrito está Vacío - No hay reservaciones para mostrar')
+    
+    }else {
+        contenedorModal.classList.toggle('modal-active')
+    }
 })
+
 botonCerrar.addEventListener('click', ()=>{
     contenedorModal.classList.toggle('modal-active')
 })
@@ -32,6 +40,7 @@ contenedorModal.addEventListener('click', () => {
 modalCarrito.addEventListener('click', (event) => {
     event.stopPropagation()
 })
+
 
 
 //========== CARGA DE OFERTA ACTIVIDADES (REF: RESERVAOPCIONES.JS) =========//
@@ -92,7 +101,6 @@ const agregarReservacion = (actId) => {
     const reserva = reservaActividades.find( (act) => act.id === actId)
     reservasAcumuladas.push(reserva)
     
-
     reservacionesAcumuladas()
     
 }
@@ -143,6 +151,9 @@ const botonVaciar = document.getElementById("vaciar-reservas")
 botonVaciar.addEventListener("click" , () => {
     reservasAcumuladas = []
     reservacionesAcumuladas()
+
+    //optimizacion del 07.01.2021
+    botonCerrar.click()
 })
 
 
