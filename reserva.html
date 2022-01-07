@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rumbo Naturaleza - Reservaciones</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/df59baf6b8.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="reserva.css">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="./reservaOpciones.js"></script>    
+    <script defer src="./reserva.js"></script>
+</head>
+<body>
+    <header class="sticky-top">
+        <h1 id="titulo" class="titulo">Reserva tu Salida</h1>
+        <button id="boton-carrito"><i class="fas fa-shopping-cart"></i><span id="cantidadReservas">0</span></button>
+        <button id="volver-inicio" class="boton-agregar">Volver al Inicio</button>
+    </header>
+
+    
+
+    <!-- Filtrado de actividades  -->
+
+    <div class="container">
+        <select id="filtrarActividades" class="form-select mt-5" >
+            <option value="all" class= "fs-3">Todas las Actividades</option>
+            <option value="Es" class= "fs-3">Escalada en Roca</option>
+            <option value="Bi" class= "fs-3">Tour de Bicicleta</option>
+            <option value="Se" class= "fs-3">Track de Senderismo</option>
+        </select>
+    </div>
+
+<!-- Lista de oferta de actividades  -->
+    <section class="container">
+        <div class="row" id="contenedor-ofertasReserva">
+  
+        </div>
+    </section>
+
+    
+<!-- Modal controlador de reservaciones de actividades -->
+  
+    <div class="modal-contenedor">
+        <div class="modal-carrito">
+            <h3>Tus Reservaciones Acumuladas:</h3>
+            <button id="carritoCerrar"><i class="fas fa-times-circle"></i></button>
+            <div id="carrito-contenedor">
+               
+            </div>
+            <p class="precioReserva"><strong>Total Acumulado: </strong>USD$<span id="total">0</span></p>
+            <button id="vaciar-reservas" class="boton-agregar">Vaciar carrito</button>
+            <button id="confirmar-reservas" class="boton-agregar">Confirmar Reservaciones</button>
+        </div>
+    </div>
+
+    <!-- Modal controlador Aceptación de reservaciones -->
+
+        
+         <div class="modal-aceptarReserva">
+            
+            <div class="modal-inputDatos">
+                <h3>¡Excelente! Ya casi concluimos</h3>
+                <button id="cerrarVentana"><i class="fas fa-times-circle"></i></button>
+                <div id="registro-contenedor">                
+                    
+                    <p>Por favor déjanos tu nombre y tu correo electrónico para enviarte los datos para realizar tu pago</p>
+                    
+                    <form id="formato-registro">
+
+                        <div class="form-floating mt-4">
+                            <input type="text" class="form-control" id="nombre-input" placeholder="inserte su nombre">
+                            <label for="floatingInput">Nombre</label>
+                        </div>                  
+
+                        <div class="form-floating mt-3">
+                            <input type="email" class="form-control" id="email-input" placeholder="nombre@example.com" value="nombre@email.com">
+                            <label for="floatingInputValue">Inserta tu e-mail</label>
+                        </div>
+                                                 
+                    </form>
+                </div>
+                <button id="completar-registro" class="boton-registrarme" type="submit">Registrarme</button>
+            </div> 
+
+        </div>  
+     
+
+
+</body>
+</html>
